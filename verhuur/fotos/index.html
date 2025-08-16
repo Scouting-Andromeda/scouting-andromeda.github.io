@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Scouting Andromeda Franeker</title>
+	<link rel="icon" href="/img/Andromeda_circle.png">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<style type="text/css">
+		html {
+			background-image: url('/img/Achtergrond.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-color: rgb(100, 160, 0);
+		}
+	</style>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<script>
+		const imagenames = [
+			"Scoutinggebouw-3.jpg",
+			"Scoutinggebouw.jpg",
+			"scoutingmateriaal.jpg",
+			"scoutingmateriaal-1.jpg",
+			"scoutingveld-3.jpg",
+			"scoutingveld-1.jpg",
+			"scoutingveld-2.jpg",
+			"scoutingveld-4.jpg",
+			"scoutingveld-6.jpg",
+			"scoutingveld-5.jpg",
+			"scoutingveld-7-2.jpg",
+			"scoutingveld-8.jpg",
+			"scoutingveld-9.jpg",
+			"scoutingveld-7.jpg",
+			"scoutingveld.jpg",
+			"mindervalidenruimte-1.jpg",
+			"mindervalidenruimte-2.jpg",
+			"mindervalidenruimte-3.jpg",
+			"mindervalidenruimte-4.jpg",
+			"overkapping-1.jpg",
+			"overkapping-2.jpg",
+			"overkapping-3.jpg",
+			"parkeerterrein-scouting-1.jpg",
+			"overkapping.jpg",
+			"overkapping-4.jpg",
+			"parkeerterrein-scouting-3.jpg",
+			"parkeerterrein-scouting-2.jpg",
+			"ruimte-explorers-2.jpg",
+			"parkeerterrein-scouting.jpg",
+			"parkeerterrein-scouting-4.jpg",
+			"ruimte-explorers.jpg",
+			"ruimte-scouts-2.jpg",
+			"ruimte-scouts-3.jpg",
+			"ruimte-scouts.jpg",
+			"ruimte-welpen-2.jpg",
+			"ruimte-welpen.jpg",
+			"ruimte-welpen-3.jpg",
+			"Scoutinggebouw-1.jpg",
+			"Scoutinggebouw-2.jpg",
+			"douche-toiletruimte.jpg",
+			"centrale-hal-2.jpg",
+			"douche-toiletruimte-1.jpg",
+			"entree-1.jpg",
+			"centrale-hal.jpg",
+			"centrale-hal-3.jpg",
+			"entree-2.jpg",
+			"entree.jpg",
+			"entree-3.jpg",
+			"entree-4.jpg",
+			"ingang-scoutinggebouw-1.jpg",
+			"ingang-scoutinggebouw.jpg",
+			"ingangscoutingterrein-2.jpg",
+			"ingangscoutingterrein-1.jpg",
+			"ingangscoutingterrein.jpg",
+			"ingangscoutingterrein-3.jpg",
+			"kampvuurplek-2.jpg",
+			"kampvuurplek-1.jpg",
+			"kampvuurplek.jpg",
+			"kampvuurplek-3.jpg",
+			"keuken-1.jpg",
+			"mindervalide-ruimte-2.jpg",
+			"keuken-2.jpg",
+			"mindervaliden-ruimte.jpg"
+		]
+
+		function load_images() {
+			let row = $('#fotos')
+			for (const image of imagenames) {
+				let img = document.createElement('img')
+				img.src = `scouting-gebouw-e-o/thumbnails/${image}`
+				img.dataset.fullsize = `scouting-gebouw-e-o/${image}`
+				img.classList.add('thumb')
+				img.addEventListener('click',open_modal)
+				let cell = document.createElement('div')
+				cell.classList.add('content_cell')
+				cell.classList.add('col1_4')
+				cell.classList.add('img_container')
+				cell.appendChild(img)
+				row.appendChild(cell)
+			}
+		}
+
+		function open_modal(e) {
+			$('#foto_highlight').src = e.target.dataset.fullsize
+			$('#foto_modal').showModal()
+		}
+		function close_modal() {
+			$('#foto_highlight').src = ''
+			$('#foto_modal').close()
+		}
+	</script>
+</head>
+<body onload="load_images()">
+	<div id="header"></div><!-- Placeholder voor header -->
+	<script>setup_header()</script>
+	<div id="fotos" class="content_row"></div>
+	<dialog id="foto_modal" onclick="if (event.target == this) {close_modal()}">
+		<button class="close_dialog" onclick="close_modal()">&#x2716;</button>
+		<img id="foto_highlight"></img>
+	</dialog>
+	<div id="footer">
+		&copy; Scouting Andromeda
+	</div>
+</body>
+</html>

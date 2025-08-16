@@ -1,0 +1,293 @@
+:root {
+	--yellow: #fbee2f;
+	--yellowdark1: #eee22c;
+	--yellowdark2: #e1d62a;
+	--blue: #4640fb;
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	background-image: url('/img/Achtergrond.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+body {
+	margin: 0;
+	font-family: "Arial";
+}
+
+#header {
+	background-color: var(--yellow);
+	position: sticky;
+	top: 0;
+	height: 75px;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#header ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+}
+#header ul li {
+	position: relative;
+}
+#header ul li a,
+#header ul li span {
+	color: black;
+	text-decoration: none;
+	padding: 15px 10px;
+	display: block;
+}
+#header ul li a:hover,
+#header ul li span:hover {
+	background-color: var(--yellowdark1);
+	border-radius: 5px;
+}
+#header .submenu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: var(--yellowdark1);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	min-width: 150px;
+	border-radius: 5px;
+}
+#header .submenu li {
+	width: 100%;
+}
+#header .submenu li a {
+	padding: 12px;
+	display: block;
+	white-space: nowrap;
+}
+#header .submenu li a:hover {
+	background-color: var(--yellowdark2);
+}
+@media (min-width: 840px) {
+	#header .dropdown:hover .submenu {
+		display: block;
+	}
+}
+.menu-toggle {
+	font-size: 24px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: none;
+	padding: 15px 10px;
+}
+@media (max-width: 840px) {
+	#header {
+		justify-content: space-between
+	}
+
+	#header ul.menu {
+		display: none;
+		flex-direction: column;
+		position: fixed;
+		top: 75px;
+		right: 0;
+		width: 150px;
+		background-color: var(--yellowdark1);
+		text-align: left;
+	}
+	#header ul.menu.show {
+		display: flex;
+	}
+	#header .submenu {
+		position: static;
+		background-color: var(--yellowdark2);
+	}
+	#header .submenu.show {
+		display: block;
+	}
+	.menu-toggle {
+		display: block;
+	}
+}
+
+#home_link {
+	height: 100%;
+}
+#home_link img {
+	height: 100%;
+}
+
+#header_mobile_space {
+	display: none;
+	width: 100%;
+}
+#header_mobile {
+	display: none;
+}
+
+@media (max-width: 840px) {
+	#header_desktop {
+		display: none;
+	}
+	#header_mobile {
+		display: block;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+p > a {
+	color: var(--blue);
+}
+
+.content_row {
+	width: 75%;
+	max-width: 1000px;
+	height: 100%;
+	margin: auto;
+}
+
+.content_row, .flex_row{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+.content_cell {
+	padding: 10px;
+	display: inline-block;
+}
+
+.content_cell > div {
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 10px;
+	height: 100%
+}
+
+.content_cell img {
+	width: 100%;
+}
+
+.content_cell .content_cell {
+	background-color: rgba(0, 0, 0, 0);
+	margin: 0;
+}
+
+.content_cell .content_row {
+	width: 100%;
+	height: auto;
+}
+
+.col1_4 {
+	width: 25%;
+}
+
+.col1_4.img_container {
+	max-height: calc(75vw/4/2);
+}
+
+.col2_4 {
+	width: 50%;
+}
+
+.col3_4 {
+	width: 75%;
+}
+
+.col4_4 {
+	width: 100%;
+}
+
+@media (max-width: 800px) {
+	.content_row {
+		flex-direction: column;
+	}
+	.col1_4, .col2_4, .col3_4, .col4_4 {
+		width: 100%;
+	}
+	#speltakken {
+		flex-direction: row;
+	}
+	#speltakken .col1_4 {
+		width: 50%;
+	}
+}
+
+@media (max-width: 540px) {
+	.content_row {
+		width: 100%;
+	}
+}
+
+
+.button {
+	display: inline-block;
+	background-color: var(--blue);
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+p > svg,
+td > svg {
+	height: 1em;
+}
+
+#footer {
+	padding: 20px;
+	text-align: center;
+}
+
+
+
+/* Fotogalerij */
+div.img_container {
+	max-height: ;
+}
+
+img.thumb {
+	height: 100%;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+dialog#foto_modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 75%;
+	border: none;
+	padding: 0;
+	background: none;
+}
+::backdrop {
+	background-color: #ccc;
+	opacity: 0.75;
+	cursor: pointer;
+}
+.close_dialog {
+	position: absolute;
+	right: 0;
+	border-radius: 50%;
+	height: 20px;
+	width: 20px;
+	padding: 0;
+	border: solid 1px black;
+	cursor: pointer;
+}
+img#foto_highlight {
+	width: 100%;
+	border-radius: 10px;
+}
