@@ -230,6 +230,11 @@ p > a {
 	}
 }
 
+h1.main {
+	font-size: 3em;
+	text-align: center;
+}
+
 
 .button {
 	display: inline-block;

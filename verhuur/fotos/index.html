@@ -113,7 +113,16 @@
 <body onload="load_images()">
 	<div id="header"></div><!-- Placeholder voor header -->
 	<script>setup_header()</script>
-	<div id="fotos" class="content_row"></div>
+	<div class="content_row">
+		<div class="content_cell col4_4">
+			<h1 class="main">Foto's van ons gebouw en terrein</h1>
+		</div>
+	</div>
+	<div class="content_row">
+		<div class="content_cell col4_4">
+			<div id="fotos" class="content_row"></div>
+		</div>
+	</div>
 	<dialog id="foto_modal" onclick="if (event.target == this) {close_modal()}">
 		<button class="close_dialog" onclick="close_modal()">&#x2716;</button>
 		<img id="foto_highlight"></img>
