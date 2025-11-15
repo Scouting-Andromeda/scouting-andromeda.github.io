@@ -11,6 +11,7 @@ const header = {
 			{name: "Explorers", url: "/speltakken/explorers"},
 			{name: "Stam", url: "/speltakken/stam"}
 		]},
+		{name: "Sterrenpost", url: "/sterrenpost"},
 		{name: "Contact", url: "/contact"},
 		{name: "Verhuur", url: "/verhuur", children: [
 			{name: "Foto's", url: "/verhuur/fotos"}
